@@ -7,25 +7,27 @@ def sum(arr)
 end
 
 def max_2_sum(arr)
-  # YOUR CODE HERE
+  arr.max(2).sum
 end
 
 def sum_to_n?(arr, n)
-  # YOUR CODE HERE
+  return false if arr.length < 2
+
+  arr.combination(2).any? { |x, y| x + y == n }
 end
 
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  "Hello, #{name}"
 end
 
 def starts_with_consonant?(s)
-  # YOUR CODE HERE
+ s =~ /\A[^aeiou\W_]/i
 end
 
 def binary_multiple_of_4?(s)
-  # YOUR CODE HERE
+  return flase s =~ /^[01]+$/
 end
 
 # Part 3

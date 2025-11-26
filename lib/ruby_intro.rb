@@ -27,7 +27,9 @@ def starts_with_consonant?(s)
 end
 
 def binary_multiple_of_4?(s)
-  return false if s =~ /^[01]+$/
+  return false unless s =~ /^[01]+$/
+
+  s.to_i(2) % 4 == 0
 end
 
 # Part 3

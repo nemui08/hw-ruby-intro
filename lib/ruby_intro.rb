@@ -27,11 +27,28 @@ def starts_with_consonant?(s)
 end
 
 def binary_multiple_of_4?(s)
-  return flase s =~ /^[01]+$/
+  return false if s =~ /^[01]+$/
 end
 
 # Part 3
 
 class BookInStock
-  # YOUR CODE HERE
+  attr_accessor :isbn, :price
+
+  def initialize(isbn, price)
+    if isbn.nil? || isbn.empty?
+      raise ArgumentError, "ISBN cannot be empty"
+    end
+
+    if price <= 0
+      raise ArgumentError, "Price must be greater than zero"
+    end
+
+    @isbn = isbn
+    @price = price
+  end
+
+  def price_as_string
+    "$%.2f" % @price
+  end
 end
